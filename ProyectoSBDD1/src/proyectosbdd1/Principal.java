@@ -5,6 +5,9 @@
  */
 package proyectosbdd1;
 
+import java.sql.Connection;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Anita
@@ -16,6 +19,12 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        try{
+        ConexionDB conexion= new ConexionDB();
+        Connection cn= conexion.conectarBase("TOSHIBA","FARMACIA");
+        }catch(Exception ex){
+           JOptionPane.showMessageDialog(null, "Error");
+        }
     }
 
     /**
